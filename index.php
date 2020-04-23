@@ -9,13 +9,36 @@
 
 <!DOCTYPE html>
 <html lang="vi" xmlns="http://www.w3.org/1999/xhtml">
-<html>
 <head>
     <title>Trương Nhật Phi</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+	<?php
+	if(isset($_GET["a"]) && isset($_GET["b"]) && isset($_GET["c"]))
+		{
+			$a = $_GET["a"];
+			$b = $_GET["b"];
+			$c = $_GET["c"];
+			if( $a +$b > $c && $a+$c>$b && $b+$c > $a)
+			{
+				if($a==$b && $b==$c)
+				$1 = "Tam Giác Đều ";
+				elseif($a==$b || $a==$c || $b==$c )
+				$1 = "Tam Giác Cân ";
+				elseif(pow($a,2)==pow($b,2)+pow($c,2)||pow($b,2)==pow($c,2)+pow($c,2)|| pow($c,2)==pow($b,2)+pow($a,2))
+				$1 = "Tam Giác Vuông ";
+				elseif(($a==$b || $a==$c || $b==$c ) && (pow($a,2)==pow($b,2)+pow($c,2)||pow($b,2)==pow($c,2)+pow($c,2)|| pow($c,2)==pow($b,2)+pow($a,2)))
+				$1 = "Tam Giác Vuông Cân ";
+				else
+				$1 = "Tam Giác Thường ";
+			}
+			else
+			$1 = " Đây không phải tam giác ";
+		}
+		
+?>
 <h1>Xét Tam giác :</h1>
 <form method="GET">
 <div> Nhập canh A </div>
