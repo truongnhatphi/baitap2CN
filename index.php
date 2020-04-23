@@ -53,3 +53,5 @@
 <input name="ketqua">
 <input type="button" name="check" onClick="getdata()" />
 </form>
+	</body>
+	</html>
